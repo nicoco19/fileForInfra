@@ -1,0 +1,6 @@
+services :
+  myapp :
+    build :
+      context : .
+    ports:
+      - 8091:80

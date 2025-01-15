@@ -1,0 +1,5 @@
+---
+# defaults/main.yml
+vim_package_name: vim
+vimrc_url: https://gist.github.com/simonista/8703722/raw/.vimrc
+vimrc_dest: /etc/skel/.vimrc

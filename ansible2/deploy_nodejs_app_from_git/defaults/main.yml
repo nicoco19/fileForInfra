@@ -1,0 +1,5 @@
+---
+# defaults file for deploy_nodejs_app_from_git
+hosts: localhost
+repo: https://github.com/olivierchoquet/exoplanet_infra.git
+repoDest: /opt/exoplanets_infra

@@ -1,0 +1,29 @@
+---
+# tasks file for deploy_nodejs_app_from_git
+    - name: Install required packages
+      apt:
+        update_cache: yes
+        name:
+          - nodejs
+          - npm
+        state: present
+
+    - name: Clone the repository
+      git:
+        repo: "{{ repo }}"
+        dest: "{{ repoDest }}"
+
+    - name: Install npm dependencies
+      command: npm install
+      args:
+        chdir: "{{ repoDest }}"
+
+    - name: Install PM2
+      npm:
+        name: pm2
+        global: yes
+
+    - name: Start App
+      command: pm2 start npm -- start
+      args:
+       chdir: /opt/exoplanets_infra

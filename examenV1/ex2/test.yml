@@ -1,0 +1,6 @@
+---
+- name: Check os_family
+  hosts: localhost
+  tasks:
+    - debug:
+        var: ansible_facts['os_family']

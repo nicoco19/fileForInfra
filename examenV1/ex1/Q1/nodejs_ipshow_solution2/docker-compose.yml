@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app1:
+    build:
+      context: .
+    ports:
+      - '3001:3000'
+  app2:
+    build:
+      context: .
+    ports:
+      - '3002:3000'
+  app3:
+    build:
+      context: .
+    ports:
+      - '3003:3000'
+  load-balancer:
+    build:
+      context: load-balancer/.
+    ports:
+      - '9000:80'

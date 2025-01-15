@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  phpapp1:
+    build:
+      context: .
+    ports:
+      - '8081:80'
+  phpapp2:
+    build:
+      context: .
+    ports:
+      - '8082:80'
+  phpapp3:
+    build:
+      context: .
+    ports:
+      - '8083:80'
+  load-balancer:
+    build:
+      context: loadBalancing/.
+    ports:
+      - '9000:80'

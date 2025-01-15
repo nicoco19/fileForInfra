@@ -1,0 +1,29 @@
+---
+- name: Install Vim
+  apt:
+    name: "{{ vim_package_name }}"
+    state: present
+
+- name: Download .vimrc file
+  get_url:
+    url: "{{ vimrc_url }}"
+    dest: "{{ vimrc_dest }}"
+    mode: '0644'
+
+- name: Copy .vimrc to existing user home directories
+  copy:
+    src: "{{ vimrc_dest }}"
+    dest: "{{ ansible_env.HOME }}/.vimrc"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Ensure default .vimrc for future users
+  copy:
+    src: "{{ vimrc_dest }}"
+    dest: "{{ vimrc_dest }}"
+    owner: root
+    group: root
+    mode: '0644'
+

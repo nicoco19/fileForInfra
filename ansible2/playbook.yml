@@ -1,0 +1,6 @@
+# playbook.yml
+- name: Appliquer le rôle my_role
+  hosts: localhost
+  become: true  # Utiliser sudo si nécessaire
+  roles:
+    - deploy_nodejs_app_from_git

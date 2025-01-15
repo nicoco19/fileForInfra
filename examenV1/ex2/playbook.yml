@@ -1,0 +1,6 @@
+---
+- name: Configure Vim using a role
+  hosts: localhost
+  become: true
+  roles:
+    - configure_vim

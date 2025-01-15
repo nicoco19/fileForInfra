@@ -1,0 +1,15 @@
+# Ignorer les fichiers binaires
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.tiff
+*.zip
+*.pdf
+*.odt
+*.VSD
+
+# Ignorer les répertoires inutiles
+siteHTML/images/
+siteHTML/files/
+siteHTML/styles/
